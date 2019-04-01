@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import Footer from "./footer"
-import 'prismjs/themes/prism-coy.css';
+import 'prismjs/themes/prism-okaidia.css';
 
 class Layout extends React.Component {
   render() {
