@@ -46,11 +46,11 @@ Wordpress2016.overrideThemeStyles = () => {
     "code[class*='language-'], pre[class*='language-']": {
         fontSize: "0.9em !important",
         fontFamily: "'SF Mono', Menlo, Consolas, Monaco, source-code-pro, Courier New, monospace !important",
-
+    },
+    ":not(pre) > code[class*='language-']": {
+        background: "none !important",
+        fontStyle: "italic !important"
     }
-    // "pre .language-, code .language-": {
-    //     fontSize: "0.5em !important"
-    // }
   }
 }
 

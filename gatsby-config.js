@@ -3,7 +3,7 @@ module.exports = {
     title: `Codeine Overload`,
     author: `Samuel Eshun`,
     description: `This blog is about iOS development and Python`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://blog.samueleshun.com`,
     social: {
       twitter: `samxeshun`,
     },
@@ -43,7 +43,7 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
                 classPrefix: "language-",
-                inlineCodeMarker: null,
+                inlineCodeMarker: '÷',
                 aliases: {},
                 showLineNumbers: false,
                 noInlineHighlight: false,

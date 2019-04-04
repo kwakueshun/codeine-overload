@@ -2,4 +2,4 @@
 
 My personal blog. Forked from [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog) with small tweaks.
 
-To run locally, `npm install`, then open https://localhost:8000.
+To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
