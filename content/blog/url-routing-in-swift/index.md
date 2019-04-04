@@ -119,11 +119,11 @@ Now, we could make a _class_ or a _struct_ conform to our protocol above so why 
 > an enum.
 
 This seems perfect for our use case because we do have a finite set of paths and we will only ever need one at a time.
-Unlike in languages like C and Objective-C where enums are merely representations of    sets of integer values, Swift enums offer even more.
+Unlike in languages like C and Objective-C where enums are merely representations of sets of integer values, Swift enums offer even more.
 
-For instance, we can have our enum cases be representations of _String_ values which is great because our paths are all of type _String_. Also, we can add extra functionality to an instance because Swift enums can have methods.
+For instance, we can have our enum cases be representations of `String` values which is great because our paths are all strings. Also, we can add extra functionality to an instance because Swift enums can have methods.
 
-So our 10x backend engineer's list of endpoint paths are of the form _foo.php_, _bar.php_, etc. We will use these as our enum cases but without the _.php_ extension.
+So our 10x backend engineer's list of endpoint paths are of the form `foo.php`, `bar.php`, etc. We will use these as our enum cases but without the `.php` extension.
 
 Our first attempt at conformance looks like this:
 
