@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 import Footer from "./footer"
-import 'prismjs/themes/prism-dracula.css';
+// import 'prismjs/themes/prism-dracula.css';
+import "../utils/prism-dracula.css";
 
 class Layout extends React.Component {
   render() {
