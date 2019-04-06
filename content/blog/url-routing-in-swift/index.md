@@ -5,7 +5,7 @@ description: ''
 spoiler: Composing nice Swifty API endpoint urls.
 ---
 
-A very common pattern in Swift projects when it comes to storing server `swift÷URL` strings is having a file named something like `Constants.swift` and declaring a couple of static `swift÷String` constants.
+A very common pattern in Swift projects when it comes to storing server `swift÷URL` strings is having a file named something like `Constants.swift` and declaring a couple of static `String` constants.
 
 ```swift
 static let BASE_URL = "https://api.superdoperidesharingapp.com"
@@ -29,11 +29,11 @@ Code duplication is not always bad but in cases like these it's usually a good i
 
 This approach is error-prone because while adding more paths/routes to the list of constants, there is the tendency to say, remove a character, leading to unusual behavior that might be difficult to catch.
 
-Let's take a look at a few ways to compose nice `URL` routes in a way to resolve the above problem.
+Let's take a look at a few ways to compose nice `swift÷URL` routes in a way to resolve the above problem.
 
 ### The Solution
 
-`K.I.S.S`, an acronym for `'keep it simple, stupid'`, is a design principle noted by
+`K.I.S.S`, an acronym for _"keep it simple, stupid"_, is a design principle noted by
 the U.S. Navy in the 60s and a popular principle amongst software developers.
 
 It states that:
@@ -99,7 +99,7 @@ Do you see what is happening in the example above? We correctly created a `SEND_
 
 Also, these are global variables and they make our application difficult to reason about because you have to take into account every function which makes use of them.
 
-Granted, we can catch something like this with a unit test, but are we really going to write tests for each URL path in our app? That is highly unlikely. Let's look at a more Swifty way to deal with our `URL`s using enums.
+Granted, we can catch something like this with a unit test, but are we really going to write tests for each URL path in our app? That is highly unlikely. Let's look at a more Swifty way to deal with our `swift÷URL` using enums.
 
 ### The Swifty Way
 We will create a protocol (or interface) named `APIRouter` where the types conforming to this protocol will have to declare their own static `baseURL` property for all instances of that type. This seems like a good way to make sure any new `baseURL` will be contained in a separate type without having to modify or extend previously declared types.
@@ -185,7 +185,7 @@ extension APIRouter where Self: RawRepresentable {
 
 How do we know that this is going to get the job done?
 
-Well, because we are good people, we are going to write unit tests to confirm that our new `APIRouter` types are producing exactly what we expect.
+Well.. because we are good people, we are going to write unit tests to confirm that our new `APIRouter` types are producing exactly what we expect.
 
 ```swift
 func testSwiftyRoutes() {
@@ -200,7 +200,7 @@ func testSwiftyRoutes() {
 }
 ```
 
-As you can see, our tests are going to pass and now we have gotten rid of all code duplication and our URLS are looking a lot more Swifty.
+As you can see, our tests are going to pass and now we have gotten rid of all code duplication and our `swift÷URL`s are looking a lot more Swifty.
 
 ### Conclusion
 `Enums` with raw values are a great way to represent stringly APIs in a more expressive and safe manner. While it's not a complete replacement for declaring your global constants, it's a technique that's good to keep in mind when setting up any finite set of string values.

@@ -31,7 +31,7 @@ class Footer extends React.Component {
           >
             github
           </a>{' '}
-          &bull;{' '}
+          {/* &bull;{' '} */}
           {/* <a
             href="https://stackoverflow.com/users/458193/dan-abramov"
             target="_blank"
