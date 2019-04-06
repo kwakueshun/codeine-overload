@@ -41,7 +41,10 @@ Wordpress2016.overrideThemeStyles = () => {
       fontSize: "1em",
     },
     "body p": {
-        fontFamily: "Nunito, Montserrat, 'Open Sans', Helvetica, 'Times New Roman', sans-serif; !important",
+        fontFamily: "Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
+    },
+    "body h3, small, footer": {
+        fontFamily: "Nunito, Montserrat, Helvetica, serif"
     },
     "code[class*='language-'], pre[class*='language-']": {
         fontSize: "0.9em !important",
