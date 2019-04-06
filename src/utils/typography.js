@@ -41,7 +41,7 @@ Wordpress2016.overrideThemeStyles = () => {
       fontSize: "1em",
     },
     "body p": {
-        fontFamily: "'Open Sans', Helvetica, 'Times New Roman', sans-serif; !important",
+        fontFamily: "Nunito, Montserrat, 'Open Sans', Helvetica, 'Times New Roman', sans-serif; !important",
     },
     "code[class*='language-'], pre[class*='language-']": {
         fontSize: "0.9em !important",
@@ -49,7 +49,8 @@ Wordpress2016.overrideThemeStyles = () => {
     },
     ":not(pre) > code[class*='language-']": {
         background: "none !important",
-        fontStyle: "italic !important"
+        fontStyle: "italic !important",
+        fontSize: "0.8em !important"
     }
   }
 }

@@ -37,7 +37,7 @@ function Bio() {
                 borderRadius: `50%`,
               }}
             />
-            <p>
+            <p style={{fontSize: "0.9rem"}}>
               Personal blog by <strong><a href={`https://twitter.com/${social.twitter}`}>{author}</a></strong>
               <br />Software Developer in Accra, Ghana.
             </p>

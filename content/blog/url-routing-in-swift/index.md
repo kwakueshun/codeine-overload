@@ -5,7 +5,7 @@ description: ''
 spoiler: Composing nice Swifty API endpoint urls.
 ---
 
-A very common pattern in Swift projects when it comes to storing server `URL` strings is having a file named something like `Constants.swift` and like you already imagined, declaring a couple of constants.
+A very common pattern in Swift projects when it comes to storing server `swift÷URL` strings is having a file named something like `Constants.swift` and declaring a couple of static `swift÷String` constants.
 
 ```swift
 static let BASE_URL = "https://api.superdoperidesharingapp.com"
@@ -113,7 +113,7 @@ protocol APIRouter {
 ```
 
 ### The Case For Enums
-Now, we could make a _class_ or a _struct_ conform to our protocol above so why enums?
+Now, we could make a `class` or a `struct` conform to our protocol above so why enums?
 > Enums are a list of constants. When you need a predefined set of values and can only
 > take one out of this set of values to use as the value for a variable, you should use
 > an enum.
@@ -189,14 +189,14 @@ Well, because we are good people, we are going to write unit tests to confirm th
 
 ```swift
 func testSwiftyRoutes() {
-    let wEmailRoute = EmailAPIRoute.welcomeEmail.url
-    let expected_wemail = "https://emailapi.superdoperidesharingapp.com/welcome_email"
+    let weRoute = EmailAPIRoute.welcomeEmail.url
+    let weExpected = "https://emailapi.superdoperidesharingapp.com/welcome_email"
 
     let loginRoute = MainAPIRoute.login.url
-    let expected_loginRoute = "https://api.superdoperidesharingapp.com/login"
+    let loginExpected = "https://api.superdoperidesharingapp.com/login"
 
-    XCTAssertEqual(wEmailRoute.absoluteString, expected_wemail)
-    XCTAssertEqual(loginRoute.absoluteString, expected_loginRoute)
+    XCTAssertEqual(weRoute.absoluteString, weExpected)
+    XCTAssertEqual(loginRoute.absoluteString, loginExpected)
 }
 ```
 
@@ -205,6 +205,8 @@ As you can see, our tests are going to pass and now we have gotten rid of all co
 ### Conclusion
 `Enums` with raw values are a great way to represent stringly APIs in a more expressive and safe manner. While it's not a complete replacement for declaring your global constants, it's a technique that's good to keep in mind when setting up any finite set of string values.
 
-Another pattern that is also common is to have a `struct` or `singleton` class to act as a namespace for a couple of static string constants.
+Another pattern that is a common alternative is to have a `struct` or `singleton` class to act as a namespace for a couple of static string constants.
+
+If you have any questions, comments and feedback, please feel free to share them on twitter. You can find me [@samxeshun](https://twitter.com/samxeshun).
 
 Thanks for reading!
