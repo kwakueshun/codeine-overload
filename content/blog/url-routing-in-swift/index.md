@@ -190,10 +190,10 @@ Well.. because we are good people, we are going to write unit tests to confirm t
 ```swift
 func testSwiftyRoutes() {
     let weRoute = EmailAPIRoute.welcomeEmail.url
-    let weExpected = "https://emailapi.superdoperidesharingapp.com/welcome_email"
+    let weExpected = "https://emailapi.superdoperidesharingapp.com/welcome_email.php"
 
     let loginRoute = MainAPIRoute.login.url
-    let loginExpected = "https://api.superdoperidesharingapp.com/login"
+    let loginExpected = "https://api.superdoperidesharingapp.com/login.php"
 
     XCTAssertEqual(weRoute.absoluteString, weExpected)
     XCTAssertEqual(loginRoute.absoluteString, loginExpected)
