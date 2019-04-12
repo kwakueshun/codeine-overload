@@ -218,7 +218,12 @@ extension Persistible where Self: Codable & Equatable {
 }
 ```
 
-Now, our error has disappeared and why is that? The Standard Library describes this protocol as:
+Now, our error has disappeared and why is that?
+
+The Standard Library describes this protocol as:
+> A type that can be compared for value equality.
+
+And for the implementation of the `"=="` function, 
 > Returns a Boolean value indicating whether two values are equal.
 > Equality is the inverse of inequality. For any values `a` and `b`,
 > `a == b` implies that `a != b` is `false`.
