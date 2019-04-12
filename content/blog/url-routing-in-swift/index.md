@@ -40,7 +40,7 @@ It states that:
 > Most systems work best if they are kept simple rather than made complicated; therefore,
 > simplicity should be a key goal in design, and unnecessary complexity should be avoided
 
-In the spirit of `K.I.S.S`, let's look at the most simple way that we can avoid repeating ourselves.
+In the spirit of `K.I.S.S`, let's look at the simplest way that we can avoid repeating ourselves.
 
 We have a function which takes a `path` string and returns the result of interpolating it with the `BASE_URL`.
 

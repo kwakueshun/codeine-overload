@@ -43,7 +43,7 @@ Wordpress2016.overrideThemeStyles = () => {
     "body p": {
         fontFamily: "Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
     },
-    "body h3, small, footer": {
+    "body h3, small, footer, dd, dt, blockquote": {
         fontFamily: "Nunito, Montserrat, Helvetica, serif"
     },
     "code[class*='language-'], pre[class*='language-']": {
