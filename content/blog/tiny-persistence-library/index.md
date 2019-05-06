@@ -73,7 +73,7 @@ protocol Persistible {
 <br/>
 
 What do we want to do with this `filename`? You ask.
-We are going to use this filename to create a `URL` path named `archiveUrl` in our app's document directory pointing to a file with this name and a `.json` file extension. While we are at it, let's throw in another utility function to help us delete the file at this `archiveUrl` for when we want to have a clean slate.
+We are going to use this filename to create a `URL` path named `archiveUrl` in our app's document directory pointing to a file with this name and a `.json` file extension. While we are at it, let's throw in another utility method to help us delete the file at this `archiveUrl` for when we want to have a clean slate.
 
 We will extend `Persistible` protocol to add these:
 ```swift
@@ -136,7 +136,7 @@ extension Persistible where Self: Codable {
 This is all great but can we skip to the part where we save and load our data? Sure.
 
 ### Loading and Saving the data
-Let's extend `Persistible` again constrained to `Codable` conformance and add a function for saving an object to file.
+Let's extend `Persistible` again constrained to `Codable` conformance and add a method for saving an object to file.
 ```swift
 extension Persistible where Self: Codable {
 
@@ -181,7 +181,7 @@ What we can do is, before saving an entry, we can check if there is already data
 
 So, what do we do in the case that this incoming data is not the same as the old data? We can create an array with the old data as the first index and append the new one to the end, then save to file.
 
-Our save function should now look like this
+Our save method should now look like this
 
 ```swift{5-7}
 extension Persistible where Self: Codable {
@@ -223,7 +223,7 @@ Now, our error has disappeared and why is that?
 The Standard Library describes this protocol as:
 > A type that can be compared for value equality.
 
-And for the implementation of the `"=="` function, 
+And for the implementation of the `"=="` function,
 > Returns a Boolean value indicating whether two values are equal.
 > Equality is the inverse of inequality. For any values `a` and `b`,
 > `a == b` implies that `a != b` is `false`.
@@ -240,7 +240,7 @@ internal func saveArrayToFile<T>(
 
 }
 ```
-But now, our call site would look something like: `saveArrayToFile([arr])` which does not look very Swifty. A nicer way would be to have this function on an instance of an array by extending the array with its generic `Element` conforming to the necessary protocols and the call site would look something like `array.saveToFile()`.
+But now, our call site would look something like: `saveArrayToFile([arr])` which does not look very Swifty. A nicer way would be to have this as a method on an instance of an array by extending the array with its generic `Element` conforming to the necessary protocols and the call site would look something like `array.saveToFile()`.
 
 So an implementation of this would be:
 

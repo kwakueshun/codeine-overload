@@ -40,15 +40,18 @@ Wordpress2016.overrideThemeStyles = () => {
     "blockquote.translation": {
       fontSize: "1em",
     },
+    "body h1": {
+        fontFamily: "Nunito, Enriqueta, sans-serif; !important"
+    },
     "body p": {
-        fontFamily: "Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
+        fontFamily: "Enriqueta, Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
     },
     "body h3, small, footer, dd, dt, blockquote": {
-        fontFamily: "Nunito, Montserrat, Helvetica, serif"
+        fontFamily: "Enriqueta, Nunito, Montserrat, Helvetica, serif"
     },
     "code[class*='language-'], pre[class*='language-']": {
         fontSize: "0.9em !important",
-        fontFamily: "'SF Mono', Menlo, Consolas, Monaco, source-code-pro, Courier New, monospace !important",
+        fontFamily: "Menlo, 'SF Mono', Menlo, Consolas, Monaco, source-code-pro, Courier New, monospace !important",
     },
     ":not(pre) > code[class*='language-']": {
         background: "none !important",

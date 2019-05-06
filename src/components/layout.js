@@ -7,6 +7,8 @@ import Footer from "./footer"
 import "../utils/prism-dracula.css";
 import "../utils/code-highlight.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "../utils/global.css";
+
 
 class Layout extends React.Component {
   render() {
@@ -18,7 +20,7 @@ class Layout extends React.Component {
       header = (
         <h1
           style={{
-            ...scale(1.5),
+            ...scale(1.2),
             marginBottom: rhythm(1.5),
             marginTop: 0,
           }}
@@ -39,7 +41,7 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: `Montserrat, sans-serif`,
+            fontFamily: `Nunito, sans-serif`,
             marginTop: 0,
           }}
         >
