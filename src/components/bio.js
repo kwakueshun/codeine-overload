@@ -39,7 +39,7 @@ function Bio() {
             />
             <p>
               Personal blog by <strong><a href={`https://twitter.com/${social.twitter}`}>{author}</a></strong>
-              <br />Software Developer in Accra, Ghana.
+              <br />Software Engineer in Accra, Ghana.
             </p>
           </div>
         )

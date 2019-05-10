@@ -10,11 +10,11 @@ class Footer extends React.Component {
             paddingTop: rhythm(1),
           }}
         >
-          <div style={{ float: 'right' }}>
+          {/* <div style={{ float: 'right' }}>
             <a href="https://samueleshun.com/" target="_blank" rel="noopener noreferrer">
               samueleshun.com
             </a>
-          </div>
+          </div> */}
           {/* © {new Date().getFullYear()} */}
           <a
             href="https://mobile.twitter.com/samxeshun"

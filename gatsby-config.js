@@ -2,11 +2,21 @@ module.exports = {
   siteMetadata: {
     title: `Codeine Overload`,
     author: `Samuel Eshun`,
-    description: `This blog is about iOS development and Python`,
-    siteUrl: `https://blog.samueleshun.com`,
+    description: `This blog is about Software development`,
+    siteUrl: `https://samueleshun.com`,
     social: {
       twitter: `samxeshun`,
     },
+    menuLinks:[
+        {
+            name:'About',
+            link:'/about'
+        },
+        {
+            name:'Work',
+            link:'/work'
+        }
+    ]
   },
   plugins: [
     {
@@ -84,4 +94,5 @@ module.exports = {
       },
     },
   ],
+
 }

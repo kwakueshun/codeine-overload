@@ -14,7 +14,8 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+    <div>
+      <Layout location={this.props.location} title={siteTitle} metalinks={data.site.siteMetadata.menuLinks}>
         <SEO
           title="A blog by Sam Eshun"
           keywords={[`swift`, `ios`, `c`, `objective c`, `macos`]}
@@ -34,7 +35,7 @@ class BlogIndex extends React.Component {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
-              
+
               <p style={{ fontSize: '0.95rem' }}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.spoiler || node.excerpt,
@@ -44,6 +45,7 @@ class BlogIndex extends React.Component {
           )
         })}
       </Layout>
+    </div>
     )
   }
 }
@@ -55,6 +57,10 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        menuLinks {
+            name
+            link
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
