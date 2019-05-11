@@ -15,7 +15,8 @@ class Footer extends React.Component {
               samueleshun.com
             </a>
           </div> */}
-          {/* © {new Date().getFullYear()} */}
+          © {new Date().getFullYear()}
+          {' '}&bull;{' '}
           <a
             href="https://mobile.twitter.com/samxeshun"
             target="_blank"
@@ -31,7 +32,24 @@ class Footer extends React.Component {
           >
             github
           </a>{' '}
-          {/* &bull;{' '} */}
+          &bull;{' '}
+          <a
+            href="mailto:samuel.eshun13@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            email
+          </a>{' '}
+          {' '}
+          &bull;{' '}
+          <a
+            href="https://www.linkedin.com/in/samuel-eshun-84186075/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin
+          </a>{' '}
+
           {/* <a
             href="https://stackoverflow.com/users/458193/dan-abramov"
             target="_blank"

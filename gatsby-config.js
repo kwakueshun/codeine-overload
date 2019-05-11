@@ -2,20 +2,24 @@ module.exports = {
   siteMetadata: {
     title: `Codeine Overload`,
     author: `Samuel Eshun`,
-    description: `This blog is about Software development`,
-    siteUrl: `https://samueleshun.com`,
+    description: `Official website for Software Engineer, Samuel Eshun. Check me out!`,
+    siteUrl: `https://samueleshun.com/`,
     social: {
       twitter: `samxeshun`,
     },
     menuLinks:[
         {
+            name:'Blog',
+            link:'/'
+        },
+        {
             name:'About',
             link:'/about'
         },
-        {
-            name:'Work',
-            link:'/work'
-        }
+        // {
+        //     name:'Work',
+        //     link:'/work'
+        // }
     ]
   },
   plugins: [

@@ -57,7 +57,17 @@ Wordpress2016.overrideThemeStyles = () => {
         background: "none !important",
         fontStyle: "italic !important",
         fontSize: "0.8em !important"
-    }
+    },
+    ".about-content, .about-content p, .about-content h4": {
+        fontFamily: "Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
+    },
+    ".about-content p": {
+        display: 'block',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '0',
+        marginRight: '0'
+    },
   }
 }
 

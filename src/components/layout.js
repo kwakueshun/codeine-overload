@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Helmet } from 'react-helmet';
+
 
 import { rhythm, scale } from "../utils/typography"
 import Footer from "./footer"
@@ -60,7 +62,11 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div
+        <React.Fragment>
+        <Helmet>
+        <link rel="stylesheet" href="https://cdn.pride.codes/css/bar_body.css" />
+        </Helmet>
+        <div
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
@@ -80,6 +86,7 @@ class Layout extends React.Component {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer> */}
       </div>
+        </React.Fragment>
     )
   }
 }
