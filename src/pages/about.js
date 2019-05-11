@@ -17,7 +17,7 @@ class About extends React.Component {
 
 function AboutDetails() {
     return (
-        <div className="about-content animated bounceIn">
+        <div className="about-content animated lightSpeedIn">
             <p><span role="img">👋🏻</span> Hi, I’m Sam.</p>
             <p>
                 <span role="img">🇬🇭 </span>Software Engineer living in Accra, Ghana.

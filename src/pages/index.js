@@ -24,7 +24,7 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div key={node.fields.slug} className='animated rollIn'>
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),

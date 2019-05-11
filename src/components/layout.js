@@ -65,6 +65,8 @@ class Layout extends React.Component {
         <React.Fragment>
         <Helmet>
         <link rel="stylesheet" href="https://cdn.pride.codes/css/bar_body.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+
         </Helmet>
         <div
         style={{
