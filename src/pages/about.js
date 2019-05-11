@@ -22,10 +22,15 @@ function AboutDetails() {
             <p>
                 <span role="img">🇬🇭 </span>Software Engineer living in Accra, Ghana.
             </p>
-            <p>📱When I’m not developing iOS apps, I build web and console apps for fun. I am passionate about Open Source, soccer and music.</p>
-            <p>🖥️ Currently, I am available for freelance work, but I'd also love to get a drink and get to know you, so don’t hesitate to get in touch.</p>
-            <p><i className="icon-link fab fa-github fa-lg"></i> My github page can be found <a href="https://github.com/kwakueshun" target="_blank">here</a></p>
-            {/* <p>📘 You can read my blog <a href="/">here</a></p> */}
+            <p>
+                <span role="img">📱</span>When I’m not developing iOS apps, I build web and console apps for fun. I am passionate about Open Source, soccer and music.
+            </p>
+            <p>
+                <span role="img">🖥️ </span>Currently, I am available for freelance work, but I'd also love to get a drink and get to know you, so don’t hesitate to get in touch.
+            </p>
+            <p>
+                <i className="icon-link fab fa-github fa-lg"></i> My github page can be found <a href="https://github.com/kwakueshun" target="_blank" rel="noopener noreferrer">here</a>
+            </p>
         </div>
     )
 }
@@ -57,8 +62,8 @@ function RandomFacts() {
             <li>I am a sucker for anything Swift & Python</li>
             <li>I do dream about the crazy things I could do with Rust</li>
             <li>These days I spend most of my leisure time on multiple slack channels including&nbsp;
-                  <a href="http://slack.devcongress.org/" target="_blank">DevCongress</a>,&nbsp;
-                  <a href="http://ios-developers.slack.com" target="_blank">iOS Dev</a>, &amp; <a href="http://pythondev.slack.com" target="_blank">Python Dev</a>
+                  <a href="http://slack.devcongress.org/" target="_blank" rel="noopener noreferrer">DevCongress</a>,&nbsp;
+                  <a href="http://ios-developers.slack.com" target="_blank" rel="noopener noreferrer">iOS Dev</a>, &amp; <a href="http://pythondev.slack.com" target="_blank" rel="noopener noreferrer">Python Dev</a>
             </li>
             </ul>
         </div>
