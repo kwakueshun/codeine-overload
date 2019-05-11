@@ -8,7 +8,7 @@ class HeaderNav extends React.Component {
     return (
       <nav>
         <ul style={{ display: "flex", flex: 1, listStyle: "none" }}>
-          {menuLinks.map(link => (
+          {menuLinks && menuLinks.map(link => (
             <li
               style={{ margin: "10px", fontFamily: `Nunito, sans-serif` }}
               key={link.link}
