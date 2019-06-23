@@ -51,7 +51,7 @@ Wordpress2016.overrideThemeStyles = () => {
     },
     "code[class*='language-'], pre[class*='language-']": {
         fontSize: "0.9em !important",
-        fontFamily: "Menlo, 'SF Mono', Menlo, Consolas, Monaco, source-code-pro, Courier New, monospace !important",
+        fontFamily: "'Courier New', Menlo, 'SF Mono', Menlo, Consolas, Monaco, source-code-pro, monospace !important",
     },
     ":not(pre) > code[class*='language-']": {
         background: "none !important",

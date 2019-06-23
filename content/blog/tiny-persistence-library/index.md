@@ -18,7 +18,7 @@ There are many ways to store different types of data for use in an iOS app. The 
 <dd>Apple's docs defines this as:</dd>
 <blockquote>An interface to the user's defaults database, where you store key-value pairs persistently across launches of your app.
 </blockquote>
-<dd>As the name vaguely suggests, this should be used for storing user preferences and app settings only and it is not advisable for storing sensitive data. If you want to save something such as a user's authentication token then you might want to look at <b><i>Keychain</i></b> instead. <br>Preferences such as flags for whether a user is logged in or whether a user has toggled a setting to say, use <i>Touch ID</i>, are a good way to use this.
+<dd>As the name vaguely suggests, this should primarily be used for storing user preferences and app settings only and it is not advisable for storing sensitive data. If you want to save something such as a user's authentication token then you might want to look at <b><i>Keychain</i></b> instead. <br>Preferences such as flags for whether a user is logged in or whether a user has toggled a setting to say, use <i>Touch ID</i>, are a good way to use this.
 There is a significant performance hit when you try storing and loading large amounts of data because the whole property list file containing this key-value store is loaded into memory anytime the app launches.</dd>
 
 <dt>Keychain</dt>
@@ -72,7 +72,8 @@ protocol Persistible {
 ```
 <br/>
 
-What do we want to do with this `filename`? You ask.
+What do we want to do with this `filename`. You ask.
+
 We are going to use this filename to create a `URL` path named `archiveUrl` in our app's document directory pointing to a file with this name and a `.json` file extension. While we are at it, let's throw in another utility method to help us delete the file at this `archiveUrl` for when we want to have a clean slate.
 
 We will extend `Persistible` protocol to add these:
@@ -112,6 +113,7 @@ extension Persistible {
 }
 ```
 
+
 So for a conforming struct `Foo`, printing `Foo.filename` should return `"Foo"`.
 
 Now, we want to extend `Persistible` for the case of `Codable` types to have default shared `JSONEncoder` and `JSONDecoder` objects.
@@ -130,7 +132,6 @@ extension Persistible where Self: Codable {
     }
 }
 ```
-
 <br/>
 
 This is all great but can we skip to the part where we save and load our data? Sure.
@@ -145,6 +146,8 @@ extension Persistible where Self: Codable {
    }
 }
 ```
+<br />
+
 Let's say our `json` file does not yet exist and we are about to persist our very first object. Our simple implementation looks like this:
 
 ```swift{4-11}
@@ -153,8 +156,8 @@ extension Persistible where Self: Codable {
    func saveToFile() {
        do {
            let encoder = Self.getEncoder()
-            let encoded = try encoder.encode(self)
-            try encoded.write(to: Self.archiveUrl, options: [])
+           let encoded = try encoder.encode(self)
+           try encoded.write(to: Self.archiveUrl, options: [])
        }
        catch let error {
            print(error.localizedDescription)
@@ -162,6 +165,8 @@ extension Persistible where Self: Codable {
    }
 }
 ```
+<br />
+
 Now, we can have another method to load the contents of our file that was saved. The return value is a single instance of our conforming type.
 ```swift
 extension Persistible where Self: Codable {
@@ -174,8 +179,11 @@ extension Persistible where Self: Codable {
     }
 }
 ```
+<br />
 
-This is all working fine now but what do we think is going to happen the next time we call `saveToFile` on another object? What is going to happen is that our file's content is going to be replaced by this new encoded object and we are basically going to lose the previous entry. This is behaviour that we clearly do not want here so we need to find a way to resolve this.
+This is all working fine now but what do we think is going to happen the next time we call `saveToFile` on another object?
+
+What is going to happen is that our file's content is going to be replaced by this new encoded object and we are basically going to lose the previous entry. This is behaviour that we clearly do not want here so we need to find a way to resolve this.
 
 What we can do is, before saving an entry, we can check if there is already data in there which would be true if we have previously saved an entry. We can then check if the new entry coming in is equal to the old one we just fetched, then we can proceed.
 
@@ -189,10 +197,10 @@ extension Persistible where Self: Codable {
    func saveToFile() {
        do {
            let existent = try Self.loadFromFile()
-            if existent != self {
-                let list = [existent, self]
+           if existent != self {
+               let list = [existent, self]
                /// save this array to file
-            }
+           }
        }
        catch let error {
            print(error.localizedDescription)
@@ -207,7 +215,9 @@ But our compiler is not happy with us at all. It is screaming at us with a messa
 
 `Binary operator '!=' cannot be applied to two 'Self' operands`.
 
-What exactly is this error trying to tell us? Well, in our snippet above, you can see that we are comparing the old and new object with the operator `"!="`. That is clearly not sufficient information for the compiler to compare these two. What exact properties of our objects are we comparing against?
+What exactly is this error trying to tell us?
+
+Well, in our snippet above, you can see that we are comparing the old and new object with the operator `"!="`. That is clearly not sufficient information for the compiler to compare these two. What exact properties of our objects are we comparing against?
 
 Now a way to resolve this error is to make our type conform to the `Equatable` protocol like this:
 ```swift{1}
@@ -232,15 +242,7 @@ Many types in the standard library already conform to this protocol. If we want 
 
 Now that the error is behind us, let's figure out how to save our array containing our new and old object.
 
-We could create a free function and pass in our array and implement saving to our file. This would look like:
-```swift
-internal func saveArrayToFile<T>(
-    _ arr: [T]
-) where T: Persistible & Codable & Equatable {
-
-}
-```
-But now, our call site would look something like: `saveArrayToFile([arr])` which does not look very Swifty. A nicer way would be to have this as a method on an instance of an array by extending the array with its generic `Element` conforming to the necessary protocols and the call site would look something like `array.saveToFile()`.
+We will create a new method `saveToFile` on an instance of an array by extending the array with its generic `Element` conforming to the necessary protocols.
 
 So an implementation of this would be:
 
@@ -255,7 +257,7 @@ extension Array where Element: Persistible & Codable & Equatable {
 }
 ```
 
-We first make sure that we have a non-empty array before proceeding. Then because our `Element` is of type `Persistible & Codable`, we can grab its `encoder` and save to its `archiveUrl`.
+We first make sure that we have a non-empty array before proceeding. Then because our `Element` is of the type `Persistible & Codable`, we can grab its `encoder` and save to its `archiveUrl`.
 
 This is really great.. so now we can add our array's implementation of `saveToFile` to file to the `Persistible` extension to look like this:
 
@@ -265,11 +267,11 @@ extension Persistible where Self: Codable & Equatable {
    func saveToFile() {
        do {
            let existent = try Self.loadFromFile()
-            if existent != self {
-                let list = [existent, self]
-               /// save this array to file
-               try list.saveToFile()
-            }
+           if existent != self {
+             let list = [existent, self]
+             /// save this array to file
+             try list.saveToFile()
+          }
        }
        catch let error {
            print(error.localizedDescription)
@@ -290,7 +292,7 @@ static func loadListFromFile() throws -> [Self] {
 }
 ```
 
-I guess we can go home now or is there anything that we are missing or haven't thought of? Actually, yes. Care to explain? Sure.
+I guess we can go home now or is there anything that we are missing or haven't thought of?   ... Actually, yes.
 
 Our first `saveToFile` looks this at the moment:
 ```swift
@@ -305,7 +307,7 @@ if existent != self {
 
 <br/>
 
-What do you see happening the next time we call `saveToFile` on an instance of `Persistible`? after saving an array to a file?
+What do you see happening the next time we call `saveToFile` on an instance of `Persistible` after saving an array to a file?
 
 This will be our offending line:
 ```swift{1}

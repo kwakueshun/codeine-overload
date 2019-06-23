@@ -33,14 +33,7 @@ Let's take a look at a few ways to compose nice `swift÷URL` routes in a way to 
 
 ### The Solution
 
-`K.I.S.S`, an acronym for _"keep it simple, stupid"_, is a design principle noted by
-the U.S. Navy in the 60s and a popular principle amongst software developers.
-
-It states that:
-> Most systems work best if they are kept simple rather than made complicated; therefore,
-> simplicity should be a key goal in design, and unnecessary complexity should be avoided
-
-In the spirit of `K.I.S.S`, let's look at the simplest way that we can avoid repeating ourselves.
+In the spirit of `K.I.S.S`, an acronym for `"keep it simple, stupid"`, let's look at the simplest way that we can avoid repeating ourselves.
 
 We have a function which takes a `path` string and returns the result of interpolating it with the `BASE_URL`.
 
@@ -123,7 +116,7 @@ Unlike in languages like C and Objective-C where enums are merely representation
 
 For instance, we can have our enum cases be representations of `String` values which is great because our paths are all strings. Also, we can add extra functionality to an instance because Swift enums can have methods.
 
-So our 10x backend engineer's list of endpoint paths are of the form `foo.php`, `bar.php`, etc. We will use these as our enum cases but without the `.php` extension.
+So our backend engineer's list of endpoint paths might be of the form `foo.php`, `bar.php`, etc. We will use these as our enum cases but without the `.php` extension.
 
 Our first attempt at conformance looks like this:
 
