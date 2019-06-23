@@ -10,11 +10,6 @@ class Footer extends React.Component {
             paddingTop: rhythm(1),
           }}
         >
-          {/* <div style={{ float: 'right' }}>
-            <a href="https://samueleshun.com/" target="_blank" rel="noopener noreferrer">
-              samueleshun.com
-            </a>
-          </div> */}
           © {new Date().getFullYear()}
           {' '}&bull;{' '}
           <a
@@ -50,13 +45,11 @@ class Footer extends React.Component {
             linkedin
           </a>{' '}
 
-          {/* <a
-            href="https://stackoverflow.com/users/458193/dan-abramov"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            stack overflow
-          </a> */}
+          <div style={{ float: 'right' }}>
+            <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+              rss
+            </a>
+          </div>
         </footer>
       );
     }

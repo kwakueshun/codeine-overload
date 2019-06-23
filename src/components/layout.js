@@ -6,8 +6,8 @@ import { Helmet } from 'react-helmet';
 import { rhythm, scale } from "../utils/typography"
 import Footer from "./footer"
 import HeaderNav from "./headernav"
-import "../utils/prism-dracula.css";
 import "../utils/code-highlight.css";
+import "../utils/prism-a11y-dark.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "../utils/global.css";
 

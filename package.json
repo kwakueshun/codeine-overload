@@ -8,9 +8,9 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "gatsby": "^2.3.3",
+    "gatsby": "^2.10.0",
     "gatsby-image": "^2.0.35",
-    "gatsby-plugin-feed": "^2.1.0",
+    "gatsby-plugin-feed": "^2.3.0",
     "gatsby-plugin-google-analytics": "^2.0.18",
     "gatsby-plugin-manifest": "^2.0.25",
     "gatsby-plugin-offline": "^2.0.25",
