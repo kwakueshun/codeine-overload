@@ -82,13 +82,11 @@ extension Persistible {
 
     static var archiveUrl: URL {
         let documentDirectory = FileManager.default.urls(
-            for: .documentDirectory,
-            in: .userDomainMask
-        ).first!
+            for: .documentDirectory, in: .userDomainMask)
+            .first!
 
-        return documentDirectory.appendingPathComponent(
-            fileName
-        ).appendingPathExtension("json")
+        return documentDirectory.appendingPathComponent(fileName)
+                                .appendingPathExtension("json")
     }
 
     static func deleteFile() {
@@ -357,7 +355,7 @@ extension Array where Element: Persistible & Codable & Equatable {
         guard count > 0 else { return }
         var copy = self
 
-        if let existentArray = try? Element.loadListFromFile(), existentArray.count > 0 {
+        if let existentArray = try? Element.loadListFromFile(), !existentArray.isEmpty {
             copy.append(contentsOf: existentArray)
             let unique = Set<Element>(copy)
             copy = Array(unique)
@@ -426,12 +424,10 @@ We can now use this method at our call site for a `Person` struct:
 
 do {
     try Person.load { data in
-
         switch data {
-
         case .single(let val):
             print("\(val.name), \(val.age), \(val.school)")
-
+            
         case .array(let values):
             print(
                 values.map { "\($0.name), \($0.age), \($0.school)" }
