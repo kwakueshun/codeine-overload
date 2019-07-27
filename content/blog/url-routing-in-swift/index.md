@@ -5,7 +5,7 @@ description: ''
 spoiler: Composing nice Swifty API endpoint urls.
 ---
 
-A very common pattern in Swift projects when it comes to storing server `swift÷URL` strings is having a file named something like `Constants.swift` and declaring a couple of static `String` constants.
+A very common pattern in Swift projects when it comes to storing server `URL` strings is having a file named something like `Constants.swift` and declaring a couple of static `String` constants.
 
 ```swift
 static let BASE_URL = "https://api.superdoperidesharingapp.com"
@@ -29,7 +29,7 @@ Code duplication is not always bad but in cases like these it's usually a good i
 
 This approach is error-prone because while adding more paths/routes to the list of constants, there is the tendency to say, remove a character, leading to unusual behavior that might be difficult to catch.
 
-Let's take a look at a few ways to compose nice `swift÷URL` routes in a way to resolve the above problem.
+Let's take a look at a few ways to compose nice `URL` routes in a way to resolve the above problem.
 
 ### The Solution
 
@@ -193,13 +193,13 @@ func testSwiftyRoutes() {
 }
 ```
 
-As you can see, our tests are going to pass and now we have gotten rid of all code duplication and our `swift÷URL`s are looking a lot more Swifty.
+As you can see, our tests are going to pass and now we have gotten rid of all code duplication and our `URLs` are looking a lot more Swifty.
 
 ### Conclusion
 `Enums` with raw values are a great way to represent stringly APIs in a more expressive and safe manner. While it's not a complete replacement for declaring your global constants, it's a technique that's good to keep in mind when setting up any finite set of string values.
 
 Another pattern that is a common alternative is to have a `struct` or `singleton` class to act as a namespace for a couple of static string constants.
 
-If you have any questions, comments and feedback, please feel free to share them on twitter. You can find me [@samxeshun](https://twitter.com/samxeshun).
+If you have any questions, comments and feedback, please feel free to share them on twitter. You can find me [@samxeshun](https://mobile.twitter.com/samxeshun).
 
 Thanks for reading!

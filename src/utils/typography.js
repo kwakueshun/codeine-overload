@@ -41,25 +41,26 @@ Wordpress2016.overrideThemeStyles = () => {
       fontSize: "1em",
     },
     "body h1": {
-        fontFamily: "Nunito, Enriqueta, sans-serif; !important"
+        fontFamily: "'Alegreya Sans', Nunito, Enriqueta, sans-serif; !important"
     },
-    "body p": {
-        fontFamily: "Enriqueta, Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
+    "body p, dd, dt, li": {
+        fontSize: '1.1rem',
+        fontFamily: "'Alegreya Sans', Enriqueta, Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
     },
-    "body h3, small, footer, dd, dt, blockquote": {
-        fontFamily: "Enriqueta, Nunito, Montserrat, Helvetica, serif"
+    "body h3, small, footer, blockquote": {
+        fontFamily: "'Alegreya Sans', Enriqueta, Nunito, Montserrat, Helvetica, serif"
     },
     "code[class*='language-'], pre[class*='language-']": {
         fontSize: "0.9em !important",
-        fontFamily: "'Courier New', Menlo, 'SF Mono', Menlo, Consolas, Monaco, source-code-pro, monospace !important",
+        fontFamily: "Inconsolata, 'Courier New', Menlo, 'SF Mono', Menlo, Consolas, Monaco, source-code-pro, monospace !important",
     },
     ":not(pre) > code[class*='language-']": {
         background: "none !important",
         fontStyle: "italic !important",
-        fontSize: "0.8em !important"
+        fontSize: "0.7em !important"
     },
     ".about-content, .about-content p, .about-content h4": {
-        fontFamily: "Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
+        fontFamily: "'Alegreya Sans', Nunito, Montserrat, Helvetica, 'Times New Roman', sans-serif; !important",
     },
     ".about-content p": {
         display: 'block',

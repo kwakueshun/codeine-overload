@@ -10,21 +10,19 @@ Persisting data is a very important aspect of many mobile applications. Whether 
 Let's look at how to approach this for a typical iOS application.
 
 ### Options
-There are many ways to store different types of data for use in an iOS app. The following are some popular options that come to mind:
-***
 
 <dl>
 <dt>UserDefaults</dt>
 <dd>Apple's docs defines this as:</dd>
 <blockquote>An interface to the user's defaults database, where you store key-value pairs persistently across launches of your app.
 </blockquote>
-<dd>As the name vaguely suggests, this should primarily be used for storing user preferences and app settings only and it is not advisable for storing sensitive data. If you want to save something such as a user's authentication token then you might want to look at <b><i>Keychain</i></b> instead. <br>Preferences such as flags for whether a user is logged in or whether a user has toggled a setting to say, use <i>Touch ID</i>, are a good way to use this.
+<dd>As the name vaguely suggests, this should primarily be used for storing user preferences and app settings only and it is not advisable for storing sensitive data. If you want to save something such as a user's authentication token then you might want to look at <i>Keychain</i> instead. <br>Preferences such as flags for whether a user is logged in or whether a user has toggled a setting to say, use <i>Touch ID</i>, are a good way to use this.
 There is a significant performance hit when you try storing and loading large amounts of data because the whole property list file containing this key-value store is loaded into memory anytime the app launches.</dd>
 
 <dt>Keychain</dt>
 <dd>The Keychain services API provides your app with a mechanism to securely store small bits of data in an encrypted database called a keychain on behalf of the user.
 <br>
-Unlike the <b><i>UserDefaults</i></b> where you can use an external app to retrieve the data from the property list file, this data is encrypted and a good way to store user secrets such as credit card information as well as API Keys and authentication tokens.
+Unlike the <i>UserDefaults</i> where you can use an external app to retrieve the data from the property list file, this data is encrypted and a good way to store user secrets such as credit card information as well as API Keys and authentication tokens.
 </dd>
 
 
@@ -32,14 +30,9 @@ Unlike the <b><i>UserDefaults</i></b> where you can use an external app to retri
 <dd>Core Data is a full-fledged object graph and persistent framework which supports large data transactions. It basically acts as a wrapper or ORM on top of an existing data source such as an SQLite file, XML file or a binary file. It has powerful capabilities such as filtering and sorting but tends to be an overkill for most projects. Also, migrating to new versions can be a pain and an unnecessary complexity that most projects should not have to worry about.</dd>
 </dl>
 
-<dt>Realm Database</dt>
-<dd>This is similar to Core Data as it also acts as an object graph framework but with less configuration to do and without the complexities of setting up a Core Data store. It has encryption features and data can be easily shared with Android apps using their version of the framework.
-<br>
-This is a third party solution and resolving this dependency with every major OS or API changes can add some overhead. Also, migrating to new versions can be as painful as with Core Data.
-</dd>
-</dl>
+<dt>Others</dt>
+<dd>Realm Database, SQLite, etc..</dd>
 
-***
 
 Before going the full monty with any of the above, let's look at another way we can approach this by writing and reading serialised `Codable` models to a json file on disk.
 
@@ -427,7 +420,7 @@ do {
         switch data {
         case .single(let val):
             print("\(val.name), \(val.age), \(val.school)")
-            
+
         case .array(let values):
             print(
                 values.map { "\($0.name), \($0.age), \($0.school)" }
@@ -447,6 +440,6 @@ We would need to do some performance profiling to find out how effective this ap
 
 The complete code can be found on [Github](https://github.com/kwakueshun/Persistible/blob/master/src/Persistible.swift).
 
-If you have any questions, comments and feedback, please feel free to share them on twitter. You can find me [@samxeshun](https://twitter.com/samxeshun).
+If you have any questions, comments and feedback, please feel free to share them on twitter. You can find me [@samxeshun](https://mobile.twitter.com/samxeshun).
 
 Thanks for reading!
