@@ -10,7 +10,7 @@ class HeaderNav extends React.Component {
         <ul style={{ display: "flex", flex: 1, listStyle: "none" }}>
           {menuLinks && menuLinks.map(link => (
             <li
-              style={{ margin: "10px", fontFamily: `'Alegreya Sans', sans-serif`, fontWeight: 'bold', fontSize: '1.2rem', }}
+              style={{ margin: "10px", fontFamily: `novabold, sans-serif`, fontWeight: 'bold', fontSize: '1.2rem', }}
               key={link.link}
             >
               <Link
