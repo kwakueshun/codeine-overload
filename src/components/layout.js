@@ -43,7 +43,7 @@ class Layout extends React.Component {
       header = (
         <h3
           style={{
-            fontFamily: `'Alegreya Sans', sans-serif`,
+            fontFamily: `'novabold', sans-serif`,
             marginTop: 0,
           }}
         >

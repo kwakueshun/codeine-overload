@@ -1,7 +1,25 @@
-/* @import url('https://fonts.googleapis.com/css?family=Nunito:400,800'); */
-@import url('https://fonts.googleapis.com/css?family=Enriqueta:400,700');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,800');
 @import url('https://fonts.googleapis.com/css?family=Inconsolata&display=swap');
+
+@font-face {
+    font-family: "novaregular";
+    src: url("./ProximaNova-Regular.otf");
+}
+
+@font-face {
+    font-family: "novabold";
+    src: url("./ProximaNova-Bold.otf");
+}
+
+@font-face {
+    font-family: "novasemi";
+    src: url("./ProximaNova-Semibold.otf");
+}
+
+@font-face {
+    font-family: "sf-mono";
+    src: url("./SFMonoRegular.otf");
+}
 
 body {
     --pink: rgb(255, 167, 196);
