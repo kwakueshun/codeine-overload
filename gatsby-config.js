@@ -15,11 +15,7 @@ module.exports = {
         {
             name:'About',
             link:'/about'
-        },
-        // {
-        //     name:'Work',
-        //     link:'/work'
-        // }
+        }
     ]
   },
   plugins: [
