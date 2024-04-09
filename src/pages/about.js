@@ -23,7 +23,7 @@ function AboutDetails() {
                 <span role="img">🇬🇭 </span>Software Engineer living in Accra, Ghana.
             </p>
             <p>
-                <span role="img">📱</span>When I’m not developing iOS apps, I build web and console apps for fun. I am passionate about Open Source, soccer and music.
+                <span role="img">📱</span>I primarily develop for Apple platforms, but I do work on web and cli tooling on the side.
             </p>
             <p>
                 <span role="img">🖥️ </span>Currently, I am available for freelance work, but I'd also love to get a drink and get to know you, so don’t hesitate to get in touch.
@@ -42,27 +42,28 @@ function TechStack() {
         <div class="about-content">
         <h4 style={_style }>Tech Stack</h4>
         <ul id="stack">
-               <li><p>Swift &amp; Objective-C: iOS, MacOS</p></li>
-	           <li><p>Python: Flask, Automating the boring stuff</p></li>
-               <li><p>JavaScript: Playing with React</p></li>
+               <li><p>Swift &amp; Objective-C: Apple platforms</p></li>
+	             <li><p>Go: Web &amp; automating the boring stuff</p></li>
+               <li><p>JavaScript: Playing with React sometimes</p></li>
                <li>PostgreSQL</li>
-               <li><p>Rust: Really just took it for a spin but I am already in love</p></li>
+               <li><p>Python: Mostly scraping</p></li>
 			</ul>
         </div>
     )
 }
 
 function RandomFacts() {
-    // ##0185BD
     var _style = { color: "#d23669", textTransform: 'uppercase' }
     return (
         <div class="about-content">
         <h4 style={_style}>Random Facts</h4>
             <ul id="stack">
-            <li>I am a sucker for anything Swift & Python</li>
-            <li>I do dream about the crazy things I could do with Rust</li>
-            <li>These days I spend most of my leisure time on multiple slack channels including&nbsp;
-                  <a href="http://slack.devcongress.org/" target="_blank" rel="noopener noreferrer">DevCongress</a>,&nbsp;
+            <li>I'm in the gym pumping iron like 2-4 times a week. Feel free to gift me some whey protein food</li>
+            <li>Love music, can't go a day without it, for real</li>
+            <li>I'm currently learning photography though I must admit that my DSLR is currently gathering dust in my camera bag</li>
+            <li>These days I spend most of my leisure time on multiple slack communities including&nbsp;
+                  <a href="http://slack.devcongress.org/" target="_blank" rel="noopener noreferrer">DevCongress Ghana</a>,&nbsp;
+                  <a href="https://gophers.slack.com" target="_blank" rel="noopener noreferrer">Gophers</a>,&nbsp;
                   <a href="http://ios-developers.slack.com" target="_blank" rel="noopener noreferrer">iOS Dev</a>, &amp; <a href="http://pythondev.slack.com" target="_blank" rel="noopener noreferrer">Python Dev</a>
             </li>
             </ul>
