@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Codeine Overload`,
-    author: `Samuel Eshun`,
+    author: `Sam Eshun`,
     description: `Official website for Software Engineer, Samuel Eshun. Check me out!`,
-    siteUrl: `https://samueleshun.com/`,
+    siteUrl: `https://sameshun.com/`,
     social: {
       twitter: `samxeshun`,
     },

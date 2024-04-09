@@ -18,7 +18,7 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location} title={siteTitle} metalinks={data.site.siteMetadata.menuLinks}>
         <SEO
           title="A blog by Sam Eshun"
-          keywords={[`swift`, `ios`, `c`, `objective c`, `macos`]}
+          keywords={[`swift`, `ios`, `c`, `objective c`, `go`]}
         />
         <Bio />
         {posts.map(({ node }) => {
